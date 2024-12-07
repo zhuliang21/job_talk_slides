@@ -2,11 +2,9 @@
 
 ## Content Table
 
-25 pages
+21 pages
 
 - background and introduction
-  - graph of market structure
-- toy model
 - research questions
 - model
   - timing
@@ -45,3 +43,20 @@
 - speak faster
 - do not spending too much time on the detail of toy model.
 - FAQ: why gov allow the plan design which could lead to the selection problem.
+
+## Thoughts
+
+- introduction and motivation
+  - managed competation in healthcare insurance: firm offer plans, consumer choose plan, gov subsidize firm by pay capitation
+  - without risk adjustment: 'cream-skimming', firm select the healthy
+  - to solve this, gov introduce risk adjustment, so that high-risk is compensated
+  - however, risk adjustment cannot fully solve this
+  - simplied case: healthy, unhealty, 65-year-old, 85-year-old
+  - the risk adjustment on the group level (65/85) will overestimate the spending of healthy and underestimate the spending of unhealthy
+  - this paper:
+    - research question:
+    - 
+- date: individual level, plan level, county level
+- model: time, demand, supply
+- result: demand, supply, counterfactual
+- 

@@ -1,0 +1,12 @@
+\ifx\undefined\bysame
+\newcommand{\bysame}{\leavevmode\hbox to\leftmargin{\hrulefill\,\,}}
+\fi
+\begin{thebibliography}{xx}
+
+\harvarditem[Fan]{Fan}{2013}{fanOwnershipConsolidationProduct2013}
+{\bf Fan, Ying}, ``Ownership {{Consolidation}} and {{Product Characteristics}}: {{A Study}} of the {{US Daily Newspaper Market}},'' {\it American Economic Review}, 2013, {\it 103} (5), 1598--1628.
+
+\harvarditem[Goolsbee and Petrin]{Goolsbee and Petrin}{2004}{goolsbeeConsumerGainsDirect2004}
+{\bf Goolsbee, Austan and Amil Petrin}, ``The {{Consumer Gains}} from {{Direct Broadcast Satellites}} and the {{Competition}} with {{Cable TV}},'' {\it Econometrica}, 2004, {\it 72} (2), 351--381.
+
+\end{thebibliography}
