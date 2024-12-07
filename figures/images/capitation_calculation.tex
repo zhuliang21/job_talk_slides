@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+    \node[draw, rectangle, align=center] (input) at (0,0) { Reimbursement \\  \textit{Demographics}  \\  \textit{Chronic Conditions}};
+    \node[above=0.25cm of input] {TM Enrollees};
+    \node[draw, rectangle, align=center] (model) at (5,0) {HCC Model \\ (Risk Factors)};
+    \node[draw, rectangle, align=center] (output) at (10,0) {Individual \\ Capitation Rates};
+    
+    \draw[->, >=latex] (input) -- (model) node[midway,above] {Regress};
+    \draw[->, >=latex] (model) -- (output) node[midway,above] {Generate};
+\end{tikzpicture}
