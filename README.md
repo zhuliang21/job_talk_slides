@@ -31,8 +31,7 @@
   - graph problem, 0-generosity have utility does not make sense
   
 - relationship between health perception and actual spending (mc)
-  - show that health perception is better than actual spending, could use the 
-  sigma of both to compare
+  - show that health perception is better than actual spending, could use the sigma of both to compare
 - the parameter set $vertheta$ should be more clear
 - the MLE estimation formula should not include the weights in the weighted log likelihood
 - the risk aversion could get involved in the preference of generosity, the interpretation of it could be mixed
@@ -47,16 +46,19 @@
 ## Thoughts
 
 - introduction and motivation
-  - managed competation in healthcare insurance: firm offer plans, consumer choose plan, gov subsidize firm by pay capitation
-  - without risk adjustment: 'cream-skimming', firm select the healthy
+  - managed competation in healthcare insurance: firm offer insurance, consumer choose plan, gov subsidize firm by pay capitation (compare to fee-for-service: gov offer insurance)
+  - 'cream-skimming', firm select the healthy
   - to solve this, gov introduce risk adjustment, so that high-risk is compensated
-  - however, risk adjustment cannot fully solve this
-  - simplied case: healthy, unhealty, 65-year-old, 85-year-old
-  - the risk adjustment on the group level (65/85) will overestimate the spending of healthy and underestimate the spending of unhealthy
+  - however, predictive-based risk adjustment on the group level cannot fully solve 'cream-skimming' incentive
+  - simplied case: healthy, sick (unobs), young, old (obs)
+  - the risk adjustment on the group level (young/old) will overestimate the spending of healthy and underestimate the spending of unhealthy
+  - firm wants to attract the healthy (not necessary the young)
+  - if the consumer has more information about their health than the gov, the firm could still cream-skimming by encourage the consumer's self selection
   - this paper:
-    - research question:
-    - 
+    - research question: how the plan strategic design affect the consumer's self selection, and what is the welfare implication of this, in the market of MA
+    - mathod: build a structural model with private information to estimate the demand and supply, and use the counterfactual to evaluate the welfare
+    - result: the selection problem leads to the inefficiency of the market, and the welfare implication is significant
+    - contribution
 - date: individual level, plan level, county level
 - model: time, demand, supply
 - result: demand, supply, counterfactual
-- 
