@@ -4,9 +4,13 @@
 
 21 pages
 
-- background and introduction
-- research questions
-- model
+- introduction
+  - research question, background, story
+  - works
+  - main finding
+  - contributions
+- data
+- model and estimation
   - timing
   - demand
     - private information: health perception
@@ -15,21 +19,12 @@
     - plan choice probability
   - supply
     - plan design problem
-- estimation
-  - demand estimation
-    - method: MLE, IV
-    - result
-  - supply estimation
-- welfare
-  - consumer surplus
-  - producer surplus
-  - gov spending
+- counterfactual
+  - equal-profit: no selection effect, all consumer has the same profit
+
 
 ## Feedback
 
-- toy model
-  - graph problem, 0-generosity have utility does not make sense
-  
 - relationship between health perception and actual spending (mc)
   - show that health perception is better than actual spending, could use the sigma of both to compare
 - the parameter set $vertheta$ should be more clear

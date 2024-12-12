@@ -49,97 +49,242 @@
 %---- The slides structure ----%
 \section{Introduction}
 
-\begin{frame}{Managed Competition in Health Insurance}
+\begin{frame}{Medicare Advantage}
   \begin{itemize}
-    \item \textbf{Fee-for-Service (FFS)}:
-      \begin{itemize}
-        \item Government reimburses providers based on the actual services rendered to beneficiaries.
-      \end{itemize}
-    \item \textbf{Managed Competition}:
-      \begin{itemize}
-        \item Government provides fixed, predetermined subsidies (capitation) to insurance firms, independent of actual healthcare expenditures.
-        \item Firms use these subsidies to offer insurance plans to beneficiaries.
-      \end{itemize}
-  \end{itemize}
-\end{frame}    
-
-\begin{frame}{An Example: Medicare Advantage}
-% insert the picture from figures/images/medicare_market.tex and center it
-\begin{figure}
-  \centering
-  \resizebox{0.6\textwidth}{!}{\input{figures/images/medicare_market.tex}}
-\end{figure}
-
-\begin{itemize}\small
-  \item Traditional Medicare (TM) is FFS.
-  \item Medicare Advantage (MA) is managed competition.
-  \item Beneficiaries choose between TM and MA.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Selection in Health Insurance Markets}
-  \begin{itemize}
-    \item \textbf{Cream Skimming}: Insurance plans strategically target healthier beneficiaries to maximize profits
-    \item \textbf{Risk Adjustment}: Government implements differential payments based on beneficiary risk profiles
-    \item Can risk adjustment effectively neutralize insurers' incentives for cream skimming?
+    \item \textbf{Managed Competition}: The government provides fixed and predetermined subsidies to private insurance firms, which in turn offer insurance plans to beneficiaries.
+    \item \textbf{Cream Skimming}: Firms strategically target healthier beneficiaries to maximize profits.
+    \item \textbf{Risk Adjustment}: The government adjusts subsidy payments to insurers based on beneficiaries' observable characteristics.
+    \item Can risk adjustment effectively neutralize insurers' incentives for cream skimming when beneficiaries have private information about their health status?
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Simplified Risk Adjustment Scenario}
   \begin{itemize}
-    \item Equal numbers of young and old individuals
+    \item Equal numbers of young and old individuals:
     \begin{itemize}
       \item \textbf{Young}: 80\% healthy, 20\% sick
       \item \textbf{Old}: 20\% healthy, 80\% sick
     \end{itemize}
     \item Cost of care: \$1,000 for healthy individuals, \$5,000 for sick individuals
-    \item Age is observable to gov; health status is not \pause
-    \item Capitation risk-adjusted by age:
+    \item Age is observable to the government; health status is private information \pause
+    \item Subsidy risk-adjusted by age:
     \begin{itemize}
       \item \textbf{Young}: \$1,000 $\times$ 0.8 + \$5,000 $\times$ 0.2 = \$1,800
       \item \textbf{Old}: \$1,000 $\times$ 0.2 + \$5,000 $\times$ 0.8 = \$4,200
     \end{itemize}
-    \item Average capitation rate based on health status:
+    \item Average subsidy rate by health status:
     \begin{itemize}
-      \item \textbf{Healthy}: \$1,800 $\times$ 0.8 + \$4,200 $\times$ 0.2 = \$2,040\ (\textbf{above} cost \$1,000)
-      \item \textbf{Sick}: \$1,800 $\times$ 0.2 + \$4,200 $\times$ 0.8 = \$3,960\ (\textbf{below} cost \$5,000)
+      \item \textbf{Healthy}: \$1,800 $\times$ 0.8 + \$4,200 $\times$ 0.2 = \$2,240\ (\textbf{above} cost of \$1,000)
+      \item \textbf{Sick}: \$1,800 $\times$ 0.2 + \$4,200 $\times$ 0.8 = \$3,960\ (\textbf{below} cost of \$5,000)
     \end{itemize}
-    \item Firms still prefer \textbf{Healthy} individuals.
+    \item \textbf{Firms still prefer healthy individuals even after risk adjustment}.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Self-Selection and Plan Design}
+\begin{frame}{Self-Selection and Strategic Plan Design}
   \begin{itemize}
-    \item When beneficiaries possess private information regarding their health status, they can engage in self-selection on plan choice.
-    \item Firms can strategically design their plans to attract healthier individuals through this self-selection.
+    \item When beneficiaries have private information about their health status, they can engage in self-selection when choosing plans.
+    \item Firms can strategically design their plans to attract healthier individuals through this self-selection (e.g., lower premiums, less generous coverages).
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Research Question}
+\begin{frame}{Motivation}
   \begin{itemize}
-    \item How do interactions between plan design and self-selection influence the effectiveness of risk adjustment?
-    \item What are the welfare implications arising from these interactions?
+    \item Medicare Advantage (MA) has gained popularity, with 54\% of Medicare beneficiaries enrolled in MA plans as of 2024.
+    \item Previous studies indicate that competition in MA markets can enhance welfare but often neglect the impact of self-selection based on private information.
+    \item Current risk adjustment mechanisms fail to account for self-selection and endogenous plan design, potentially causing market distortions.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{This Paper}
+\begin{frame}{Research Questions}
   \begin{itemize}
-    \item Approach
-    \item Results
+    \item How does self-selection influence plan design and market outcomes in MA market?
+    \item What are the welfare implications of these interactions?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Methodology}
+  \begin{itemize}
+    \item Develop a structural model of demand and supply that incorporates self-selection and endogenous plan design.
+    \item Estimate the model using Medicare Advantage data.
+    \item Conduct counterfactual simulation to analyze scenario where self-selection effects are neutralized.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Key Findings}
+  Counterfactual simulation indicate that if the risk adjustment policy can neutralize self-selection effect:
+  \begin{itemize}
+    \item Consumer surplus increases by 11\%
+    \item Firm profits increase by 34.6\%
+    \item No significant change in government spending
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Contributions}
   \begin{itemize}
-    \item \textbf{Theoretical}: Develop a model of managed competition with endogenous plan design and self-selection with private information.
-    \item \textbf{Empirical}: Estimate the model using data from Medicare Advantage.
-    \item \textbf{Policy}: Evaluate the welfare implications of self-selection effect in health insurance markets.
+    \item \textbf{Theoretical}: Developed a managed competition model incorporating endogenous plan design and self-selection under private information.
+    \item \textbf{Empirical}: Applied the model to Medicare Advantage data, evaluating the welfare implications of self-selection effects.
+    \item \textbf{Policy}: Provided insights for enhancing risk adjustment payment policies to mitigate market distortions.
   \end{itemize}
 \end{frame}
 
 \section{Data}
+
+\begin{frame}{Data}
+  \begin{itemize}
+    \item \textbf{Individual Level}: Medicare Current Beneficiary Survey (MCBS)
+    \begin{itemize}
+      \item Contains detailed information on individual beneficiaries, including demographics and plan choice.
+    \end{itemize}
+    \item \textbf{Plan Level}: Centers for Medicare and Medicaid Services (CMS) datasets on MA plans
+    \begin{itemize}
+      \item Includes data on plan generosity levels, premiums, and other attributes such as network and additional benefits.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
 \section{Model}
-\section{Results}
+\begin{frame}{Timing}
+  \begin{itemize}
+    \item \textbf{Government Sets Subsidy Rates:} Determines capitation payments using a risk adjustment formula.
+    \item \textbf{Stage 1 - Firm Decisions:} Firms set the prices and generosity levels of their plans to maximize profit after accounting for subsidies.
+    \item \textbf{Stage 2 - Consumer Choices:} Consumers choose plans (including the outside option) that best meet their needs, using their private information.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Demand: Private Information}
+  Each consumer is characterized by two variables:
+  \begin{itemize}
+      \item An observable risk-adjusted capitation rate ($k_i$), which serves as a proxy for the average expected health expenditure within a cohort with similar observable characteristics.
+      \item A private health perception ($e_i$), which directly influences their preference for plan generosity and, consequently, their plan choice.
+  \end{itemize}
+
+  \begin{equation}
+    \ln(e_i) = \ln(k_i) + \tau_i, \quad \tau_i \sim N(0, \sigma_\tau^2)
+  \end{equation}
+
+\end{frame}
+
+\begin{frame}{Demand: Utility}
+
+  The utility of consumer $i$ from plan $j$ is given by
+
+  \begin{equation}
+    u_{ij} = \beta_i g_j - \alpha_i p_j + \lambda^{A}_i A_j + \lambda^X X_j + \xi_j + \varepsilon_{ij}.
+  \end{equation}
+
+  \begin{itemize}\small
+    \item $g_j$ and $p_j$ are the generosity \footnote{Generosity is measured by expected OOP under a specific health condition} and premium of plan $j$.
+    \item $A_j$ is MA type indicator
+    \item $X_j$ is a vector of other plan characteristics
+    \item $\xi_j$ is the unobserved plan-specific quality
+    \item $\varepsilon_{ij}$ is the idiosyncratic error term, following a T1EV distribution
+  \end{itemize}
+
+  The utilitiy of the outside option (TM + Medigap) is
+  \begin{equation}
+    u_{i0} = \beta_i g_0 - \alpha_i p_0 + \xi_0 + \varepsilon_{i0}.
+  \end{equation}
+\end{frame}
+
+\begin{frame}{Demand: Hetereogeneity}
+
+  Preferences for plan generosity ($\beta_i$) are influenced by health perception $e_i$
+  \begin{equation}
+      \beta_i = \bar{\beta} + \gamma \ln e_i.
+  \end{equation}
+  Preferences for plan premiums ($\alpha_i$) are associated with income level
+  \begin{equation}
+      \alpha_i = \bar{\alpha} + \rho^{\text{inc}} \text{inc}_i.
+  \end{equation}
+  Preferences for the MA type ($\lambda^{A}_i$) relate to demographic factors and existing health coverage, including Medicaid eligibility and employer-sponsored insurance (ESI) coverage
+  \begin{equation}
+      \lambda^{A}_i = \bar{\lambda}^{A} + \rho^{\text{edu}} \text{edu}_i + \rho^{\text{white}} \text{white}_i + \rho^{\text{Mcd}} \text{Mcd}_i + \rho^{\text{ESI}} \text{ESI}_i.
+  \end{equation}
+  
+\end{frame}
+
+\begin{frame}{Estimation: Consumer Heterogeneity}
+  \input{figures/tables/demand_result_1.tex}
+\end{frame}
+
+\begin{frame}{Supply: Competition Setting}
+  \begin{itemize}
+    \item \textbf{Bertrand-Nash Competition}: Firms compete on prices and plan generosity levels, considering plan offerings and other exogenous attributes, with each plan having specific cost functions.
+    \item \textbf{Multi-Product, Multi-Market}: Firms operate as multi-product entities competing across multiple submarkets.
+    \item \textbf{Short-Run Focus}: The model does not account for the entry and exit of plans.
+    \item \textbf{Selection Effect}: The cost of plans is influenced not only by the plan's generosity level but also by the health status of the individuals who select the plan, which is itself affected by the plan's generosity.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Supply: Costs}
+
+  The cost of a plan is influenced by its generosity level $g_j$ and other observable exogenous attributes $X_j$. The marginal cost function is expressed as:
+  \begin{equation}
+    \label{eq:marginal_cost}
+    mc_j(g_j) = mc_j^g(g_j) + \underbrace{w^X \cdot X_j + \omega_j}_{\text{predetermined}},
+  \end{equation}
+  \begin{itemize}\small
+    \item $\omega_j$ represents the unobserved plan-specific cost shock.
+    \item Each plan has a unique cost function due to the predetermined components.
+    \item Higher generosity in plans increases costs both directly, through more generous coverage, and indirectly, by attracting more sick individuals, which adds further expenses to the plan (the \textbf{Selection Effect}).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Plan Costs}
+  \input{figures/tables/cost_result.tex}
+\end{frame}
+
+\section{Counterfactual}
+
+\begin{frame}{``Equal-Profit'' Risk Adjustment}
+  \begin{itemize}
+    \item \textbf{Objective}: Neutralize self-selection effects.
+    \item \textbf{Method}: 
+    Adjust payment to plans to ensure identical profit across all beneficiaries, regardless of their health status. (i.e. healthy and sick individuals have the same expected profits for the firm)
+    \item \textbf{Outcome}:
+      \begin{itemize}
+        \item Ensures plan costs depend only on generosity, not on enrollees' health status.
+        \item Eliminates cost distortions caused by beneficiaries' self-selection.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Welfare Comparison}
+  \begin{table}[ht]
+    \small
+    \centering
+    \caption{Welfare Comparison Between Current and Equal-Profit Risk Adjustment}
+    \label{tab:counterfactual}
+    \begin{threeparttable}
+      \begin{tabular}{@{}rccc@{}}
+        \toprule
+        \textbf{Metrics} & \textbf{Current} & \textbf{Equal-Profit} & \textbf{\% Change} \\ \midrule
+        Total MA share (\%) & 30.58 & 33.25 & 8.72\% \\
+        Total Consumer Surplus & 22.08 & 24.51 & 11.01\% \\
+        Total Producer Surplus & 14.45 & 19.45 & 34.60\% \\
+        Gov Spending on TM & 370.26 & 357.46 & -3.46\% \\
+        Gov Spending on MA & 163.51 & 176.31 & 7.82\% \\
+        Capitation Adjustment & - & 0.95 & - \\
+        Total Gov Spending & 533.77 & 534.72 & 0.18\% \\
+        \bottomrule
+      \end{tabular}
+      \begin{tablenotes}[para,flushleft]
+        \footnotesize
+        \textit{Note}: The monetary values are in billion dollars. The capitation adjustment is the change in the total capitation payment from the government to MA firms, compared to the current policy. The total government spending is the sum of government spending on TM and MA.
+      \end{tablenotes}
+    \end{threeparttable}
+  \end{table}
+\end{frame}
+
+
+\section*{Thank You}
+
+\begin{frame}[noframenumbering, plain]
+  \begin{center}
+    \Huge \textit{Thank You!}
+  \end{center}
+\end{frame}
 
 %---- The appendix ----%
 \appendix
@@ -187,4 +332,16 @@
   \end{figure}
 \end{frame}
 
+\begin{frame}{An Example: Medicare Advantage}
+  % insert the picture from figures/images/medicare_market.tex and center it
+  \begin{figure}
+    \centering
+    \resizebox{0.6\textwidth}{!}{\input{figures/images/medicare_market.tex}}
+  \end{figure}
+  \begin{itemize}\small
+    \item Traditional Medicare (TM) is FFS.
+    \item Medicare Advantage (MA) is managed competition.
+    \item Beneficiaries choose between TM and MA.
+  \end{itemize}
+  \end{frame}
 \end{document}

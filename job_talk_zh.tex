@@ -1,0 +1,156 @@
+\documentclass[professionalfonts, aspectratio=169]{beamer}  
+\usepackage{CJKutf8}
+\AtBeginDocument{\begin{CJK}{UTF8}{gkai}}
+\AtEndDocument{\end{CJK}}
+\usefonttheme{serif}                                        % Font theme: serif
+\usepackage[utf8]{inputenc}                                 % Allows the use of different input encodings
+\usepackage{graphicx}                                       % Enhanced support for graphics
+\usepackage{amsmath}                                        % Enhances the typesetting of mathematics
+\usepackage{amsfonts}                                       % Extra mathematical fonts
+\usepackage{amssymb}                                        % Extra mathematical symbols
+\usepackage{threeparttable}                 % For table notes
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+\usepackage{booktabs}                                       % Enhances the quality of tables
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{multirow}
+% link settings
+\usepackage{hyperref}                       % For hyperlinks
+\usepackage[authoryear]{natbib}             % For bibliography
+
+\usepackage{appendixnumberbeamer} % Numbering appendixes in beamer
+\pdfstringdefDisableCommands{
+  \def\translate{}
+}
+\usepackage{dcolumn}
+\setbeamertemplate{navigation symbols}{} % Remove navigation symbols
+\setbeamertemplate{footline}[frame number] % Add page number
+
+% \setbeamercovered{transparent}  % Semi-transparent overlay
+
+%---- Set the title page ----%
+\title{保险市场中的风险调整、自选择与计划设计}
+\institute{Stony Brook University}
+\author{梁祝}
+\date{\today}
+
+%---- Begin the document ----%
+\begin{document}
+
+\AtBeginSection[] % At the beginning of each section...
+{
+  \begin{frame}[noframenumbering, plain] % Create a new frame without a frame number
+    \tableofcontents[currentsection] % Display the table of contents for the current section
+  \end{frame}
+}
+
+\begin{frame}[noframenumbering, plain] % title frame without a frame number
+    \titlepage
+\end{frame}
+
+%---- The slides structure ----%
+
+\begin{frame}{管理型竞争}
+  \begin{itemize}
+      \item 政府向保险公司提供固定且预先确定的受益人补贴（定额支付），不依据实际医疗支出。
+      \item 保险公司为受益人提供保险计划，并向服务提供者支付部分实际医疗费用。
+      \item 保险公司不得进行价格歧视。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{自选择}
+  \textbf{消费者的自选择}：
+  \begin{itemize}
+    \item 相较于可观察指标，消费者对自身健康状况有更深入的了解。
+    \item 基于这些私有信息，选择最适合的保险计划。
+    \item 健康状况良好的消费者更倾向于选择提供较低慷慨度的保险计划。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{客户筛选}
+  \textbf{保险公司的策略性设计}：
+  \begin{itemize}
+    \item 健康消费者的医疗支出较低，利润率更高，激励保险公司筛选这些消费者。
+    \item 政府通过基于可观察的消费者特征进行风险调整定额支付，以消除这种激励。
+    \item 现有风险调整未能涵盖私有信息，无法全面反映风险，\\激励因此未完全消除。
+      \hyperlink{simplifiedRiskAdjustment}{\beamerbutton{简化的风险调整例子}}
+    \item 保险公司利用自选择效应设计保险计划，从而完成筛选。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{研究问题}
+  \textbf{管理型竞争下的保险市场}：
+  \begin{itemize}
+    \item 消费者的自选择如何影响保险计划的策略性设计？
+    \item 如何评估自选择效应对保险市场福利的影响？
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{研究方法}
+  \begin{itemize}
+    \item 使用美国医疗保险市场Medicare Advantage的数据，包括消费者层面和保险计划层面的信息。
+    \item 建立结构模型，涵盖消费者（需求端）和保险公司（供给端）的行为。
+    \item 需求端模型考虑消费者的私有信息及自选择效应。
+    \item 供给端模型涉及定价选择和保险计划慷慨度的设计。
+    \item 进行反事实模拟，分析在消除自选择效应下保险计划设计及福利的变化。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{关键结论}
+  \begin{itemize}
+    \item 私有信息显著影响消费者的保险计划选择。
+    \item 当前的风险调整机制未能完全弥补选择效应带来的激励。
+    \item 消费者的自选择激励保险公司设计提供较低慷慨度的保险计划。
+    \item 反事实模拟表明，如果风险调整机制完全消除选择效应，保险计划的慷慨度将显著提高，消费者福利提升11\%，而保险公司的利润提升34.6\%。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{贡献}
+  \begin{itemize}
+    \item \textbf{理论}: 发展了一个管理型竞争模型，允许消费者自选择，并内生化了保险计划慷慨度设计。
+    \item \textbf{实证}: 将模型应用于Medicare Advantage市场，从风险调整的视角进行切入，评估自选择效应对福利的影响。
+    \item \textbf{政策}: 为改进风险调整支付政策提供量化分析。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \Huge 感谢您的时间！
+\end{frame}
+
+
+%---- The appendix ----%
+\appendix
+\begin{frame}[plain, noframenumbering] % Create a new frame without a frame number
+  % show the title of the appendix centered on the slide
+  \begin{center}
+    \Huge 附录
+  \end{center}
+\end{frame}
+
+\begin{frame}{简化的风险调整例子}\label{simplifiedRiskAdjustment}
+  \begin{itemize}
+    \item 年轻和年老个体数量相等
+    \begin{itemize}
+      \item \textbf{年轻}: 健康的占80\%，生病的占20\%
+      \item \textbf{年老}: 健康的占20\%，生病的占80\%
+    \end{itemize}
+    \item 医疗费用：健康个体 \$1,000，生病个体 \$5,000
+    \item 年龄对政府是可观察到的；健康状况则不可 （私有信息） \pause
+    \item 按年龄进行风险调整的定额支付：
+    \begin{itemize}
+      \item \textbf{年轻}: \$1,000 $\times$ 0.8 + \$5,000 $\times$ 0.2 = \$1,800
+      \item \textbf{年老}: \$1,000 $\times$ 0.2 + \$5,000 $\times$ 0.8 = \$4,200
+    \end{itemize}
+    \item 基于健康状况的平均定额支付：
+    \begin{itemize}
+      \item \textbf{健康}: \$1,800 $\times$ 0.8 + \$4,200 $\times$ 0.2 = \$2,040\ (\textbf{高于}费用 \$1,000)
+      \item \textbf{生病}: \$1,800 $\times$ 0.2 + \$4,200 $\times$ 0.8 = \$3,960\ (\textbf{低于}费用 \$5,000)
+    \end{itemize}
+    \item 公司 \textbf{仍然偏好}健康个体。
+  \end{itemize}
+\end{frame}
+
+
+\end{document}
