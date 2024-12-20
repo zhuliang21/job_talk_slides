@@ -57,3 +57,23 @@
 - date: individual level, plan level, county level
 - model: time, demand, supply
 - result: demand, supply, counterfactual
+
+feedback:
+- the contributions: add the literature (cite some benchmark) and the new things you do
+- counterfactual: add more about the idea of the new risk adjustment from the theorical paper.
+- maybe show the gragph of previous risk adjustment and the new risk adjustment
+- stat description of the data
+- walfare changes: loser and winner
+- color the main focus parameters
+- hoteling problem of supply, hard to get the results (stern),
+- add more about the estimation of demand and foc of supply, so audience could understand the result better
+- add the first page on basic description of the Meidcare, and MA
+- there are some winer and loser in the counterfactual, could be better to show who they are.
+- the result should be after the model, not in the model (demand modell, supply model, demand estimation, supply estimation, counterfactual)
+
+todo:
+
+- add the first page on basic description of the Meidcare, and MA
+- add the literature review on the contribution page
+- demand model: add the estimation part
+- supply model: add the first order condition

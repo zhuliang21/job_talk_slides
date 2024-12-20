@@ -49,6 +49,14 @@
 %---- The slides structure ----%
 \section{Introduction}
 
+\begin{frame}{Medicare System}
+  Medicare is a U.S. federal health insurance program mainly for individuals aged 65 and older, comprising two main components:
+  \begin{itemize}
+    \item \textbf{Traditional Medicare (TM)}: Usually combined with Medigap plans, offering generous coverage but higher premiums.
+    \item \textbf{Medicare Advantage (MA)}: A managed competition system where the government subsidizes private insurers to provide plans with lower premiums and reduced coverage.
+  \end{itemize}
+\end{frame}
+
 \begin{frame}{Medicare Advantage}
   \begin{itemize}
     \item \textbf{Managed Competition}: The government provides fixed and predetermined subsidies to private insurance firms, which in turn offer insurance plans to beneficiaries.
@@ -143,6 +151,12 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Summary Statistics}
+  \input{figures/tables/consumer_summary.tex}
+\end{frame}
+  
+
+
 \section{Model}
 \begin{frame}{Timing}
   \begin{itemize}
@@ -156,11 +170,11 @@
   Each consumer is characterized by two variables:
   \begin{itemize}
       \item An observable risk-adjusted capitation rate ($k_i$), which serves as a proxy for the average expected health expenditure within a cohort with similar observable characteristics.
-      \item A private health perception ($e_i$), which directly influences their preference for plan generosity and, consequently, their plan choice.
+      \item A private health perception ($\textcolor{red}{e_i}$), which directly influences their preference for plan generosity and, consequently, their plan choice.
   \end{itemize}
 
   \begin{equation}
-    \ln(e_i) = \ln(k_i) + \tau_i, \quad \tau_i \sim N(0, \sigma_\tau^2)
+    \ln(\textcolor{red}{e_i}) = \ln(k_i) + \tau_i, \quad \tau_i \sim N(0, \sigma_\tau^2)
   \end{equation}
 
 \end{frame}
@@ -170,7 +184,7 @@
   The utility of consumer $i$ from plan $j$ is given by
 
   \begin{equation}
-    u_{ij} = \beta_i g_j - \alpha_i p_j + \lambda^{A}_i A_j + \lambda^X X_j + \xi_j + \varepsilon_{ij}.
+    u_{ij} = \textcolor{red}{\beta_i} g_j - \alpha_i p_j + \lambda^{A}_i A_j + \lambda^X X_j + \xi_j + \varepsilon_{ij}.
   \end{equation}
 
   \begin{itemize}\small
@@ -183,15 +197,15 @@
 
   The utilitiy of the outside option (TM + Medigap) is
   \begin{equation}
-    u_{i0} = \beta_i g_0 - \alpha_i p_0 + \xi_0 + \varepsilon_{i0}.
+    u_{i0} = \textcolor{red}{\beta_i} g_0 - \alpha_i p_0 + \xi_0 + \varepsilon_{i0}.
   \end{equation}
 \end{frame}
 
 \begin{frame}{Demand: Hetereogeneity}
 
-  Preferences for plan generosity ($\beta_i$) are influenced by health perception $e_i$
+  Preferences for plan generosity ($\textcolor{red}{\beta_i}$) are influenced by health perception $\textcolor{red}{e_i}$
   \begin{equation}
-      \beta_i = \bar{\beta} + \gamma \ln e_i.
+      \textcolor{red}{\beta_i} = \bar{\beta} + \gamma \ln \textcolor{red}{e_i}.
   \end{equation}
   Preferences for plan premiums ($\alpha_i$) are associated with income level
   \begin{equation}
@@ -204,8 +218,35 @@
   
 \end{frame}
 
-\begin{frame}{Estimation: Consumer Heterogeneity}
-  \input{figures/tables/demand_result_1.tex}
+\begin{frame}{Demand: Plan Mean Utility}
+  The mean utility of plan $j$ relative to the outside option is
+
+  \begin{equation}
+    \delta_j = \bar{\beta} (g_j - g_0) - \bar{\alpha} (p_j - p_0) + \bar{\lambda}^{A} A_j + \lambda^X X_j + \xi_j - \xi_0,
+  \end{equation}
+  and let the $\mu_ij$ denote the individual-specific deviation from $\delta_j$, we can rewrite the utility function as
+  \begin{equation}
+    u_{ij} = \delta_j + \mu_{ij} + \varepsilon_{ij}.
+  \end{equation}
+
+\end{frame}
+
+\begin{frame}{Demand: Plan Choice Probability}
+  Considering the T1EV distribution of $\varepsilon_{ij}$, the probability that consumer $i$ chooses plan $j$ is given by
+  \begin{equation}
+    s_{ij}(\textcolor{red}{e_i}) = 
+    \frac{\exp \big(\delta_j + \mu_{ij}(\textcolor{red}{e_i}) \big)}
+    {\sum_{j' = 0}^{J}  \exp \big(\delta_{j'} + \mu_{ij'}(\textcolor{red}{e_i}) \big)}.
+  \end{equation}
+
+  The market share of plan $j$ is given by the weighted sum of the individual choice probabilities
+  \begin{equation}
+    q_j = \sum_i w_i \cdot s_{ij}(\textcolor{red}{e_i}) = \sum_i w_i \cdot \int s_{ij}(e) \, dF_{e}(e).
+\end{equation}
+\begin{itemize}\small
+  \item $w_i$ is the sampling weight of consumer $i$
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}{Supply: Competition Setting}
@@ -230,6 +271,61 @@
     \item Higher generosity in plans increases costs both directly, through more generous coverage, and indirectly, by attracting more sick individuals, which adds further expenses to the plan (the \textbf{Selection Effect}).
   \end{itemize}
 \end{frame}
+
+\begin{frame}{Supply: Plan Design Problem}
+  The total profit for a firm in county $c$ is the aggregate of profits from all its offered plans
+  \begin{equation}
+      \pi_{f,c} = \sum_{j \in \mathcal{J}_{f,c}} \pi_{j}.
+  \end{equation}
+
+  The state-level profit for MA firm $f$ is then the sum of profits across all counties $c$ where firm $f$ operates
+  \begin{equation}
+      \pi_{f} = \sum_{c \in \mathcal{C}_f} \pi_{f,c},
+  \end{equation}
+  where $\mathcal{C}_f$ denotes the set of counties in which firm $f$ is active.
+
+  The firm's plan design problem can be formulated as maximizing state-level profit by strategically setting bid and generosity levels for each plan
+  \begin{equation}
+  \label{eq:objective_function}
+      \max_{b_f, g_f} \pi_{f} = \sum_{c \in \mathcal{C}_f } \sum_{j \in \mathcal{J}_{f,c} } (b_j - mc_j(g_j)) \cdot M_c \cdot s_{c,j}(g, b),
+  \end{equation}
+
+\end{frame}
+
+\begin{frame}{Supply: Necessary Optimality Conditions}
+  The first-order conditions for the firm's plan design problem are
+  \begin{equation}
+    \label{eq:bid_foc}
+        \{b_j\}: \quad \sum_{c \in \mathcal{C}_f} 
+        M_c \left(s_{c,j} + \sum_{j \in \mathcal{J}_{f,c}} (b_j - mc_j) \cdot \frac{\partial s_{c,j}}{\partial b_j} \cdot
+        \frac{\partial b_j}{\partial p_j} \right) = 0 
+        \quad \forall j,
+    \end{equation}
+    \begin{equation}
+    \label{eq:generosity_foc}
+        \{g_j\}: \quad \sum_{c \in \mathcal{C}_f} 
+        M_c \left( 
+            \frac{\partial mc_j}{\partial g_j} \cdot s_{c,j} - 
+            \sum_{j \in \mathcal{J}_{f,c}}
+            (b_j - mc_j) \cdot \frac{\partial s_{c,j}}{\partial g_j}
+        \right) = 0
+        \quad \forall j,
+    \end{equation}
+    where $\frac{\partial b_j}{\partial p_j} = 1$.
+
+    Each firm faces unique optimization conditions due to differences in plan offerings and the specifics of their cost functions (see Equation \ref{eq:marginal_cost}).
+
+\end{frame}
+
+\section{Estimation}
+
+\begin{frame}{Estimation: Consumer Heterogeneity}
+  \input{figures/tables/demand_result_1.tex}
+\end{frame}
+
+
+
+
 
 \begin{frame}{Plan Costs}
   \input{figures/tables/cost_result.tex}
