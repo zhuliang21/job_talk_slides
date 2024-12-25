@@ -52,8 +52,8 @@
 \begin{frame}{Medicare System}
   Medicare is a U.S. federal health insurance program mainly for individuals aged 65 and older, comprising two main components:
   \begin{itemize}
-    \item \textbf{Traditional Medicare (TM)}: Usually combined with Medigap plans, offering generous coverage but higher premiums.
-    \item \textbf{Medicare Advantage (MA)}: A managed competition system where the government subsidizes private insurers to provide plans with lower premiums and reduced coverage.
+    \item \textbf{Traditional Medicare (TM)}: A fee-for-service (FFS) system, typically paired with Medigap plans.
+    \item \textbf{Medicare Advantage (MA)}: A managed competition framework where the government subsidizes private insurers to offer plans with \textbf{lower premiums and reduced generosity} compared to TM options.
   \end{itemize}
 \end{frame}
 
@@ -68,19 +68,19 @@
 
 \begin{frame}{Simplified Risk Adjustment Scenario}
   \begin{itemize}
-    \item Equal numbers of young and old individuals:
+    \item Equal size of younger and older seniors
     \begin{itemize}
-      \item \textbf{Young}: 80\% healthy, 20\% sick
-      \item \textbf{Old}: 20\% healthy, 80\% sick
+      \item \textbf{Younger}: 80\% healthy, 20\% sick
+      \item \textbf{Older}: 20\% healthy, 80\% sick
     \end{itemize}
     \item Cost of care: \$1,000 for healthy individuals, \$5,000 for sick individuals
     \item Age is observable to the government; health status is private information \pause
     \item Subsidy risk-adjusted by age:
     \begin{itemize}
-      \item \textbf{Young}: \$1,000 $\times$ 0.8 + \$5,000 $\times$ 0.2 = \$1,800
-      \item \textbf{Old}: \$1,000 $\times$ 0.2 + \$5,000 $\times$ 0.8 = \$4,200
+      \item \textbf{Younger}: \$1,000 $\times$ 0.8 + \$5,000 $\times$ 0.2 = \$1,800
+      \item \textbf{Older}: \$1,000 $\times$ 0.2 + \$5,000 $\times$ 0.8 = \$4,200
     \end{itemize}
-    \item Average subsidy rate by health status:
+    \item Average subsidy rate by health group:
     \begin{itemize}
       \item \textbf{Healthy}: \$1,800 $\times$ 0.8 + \$4,200 $\times$ 0.2 = \$2,240\ (\textbf{above} cost of \$1,000)
       \item \textbf{Sick}: \$1,800 $\times$ 0.2 + \$4,200 $\times$ 0.8 = \$3,960\ (\textbf{below} cost of \$5,000)
@@ -89,18 +89,11 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Self-Selection and Strategic Plan Design}
+\begin{frame}{Motivation \& Related Literature}
   \begin{itemize}
-    \item When beneficiaries have private information about their health status, they can engage in self-selection when choosing plans.
-    \item Firms can strategically design their plans to attract healthier individuals through this self-selection (e.g., lower premiums, less generous coverages).
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Motivation}
-  \begin{itemize}
-    \item Medicare Advantage (MA) has gained popularity, with 54\% of Medicare beneficiaries enrolled in MA plans as of 2024.
-    \item Previous studies indicate that competition in MA markets can enhance welfare but often neglect the impact of self-selection based on private information.
-    \item Current risk adjustment mechanisms fail to account for self-selection and endogenous plan design, potentially causing market distortions.
+    \item MA has gained popularity, enrolling 54\% of beneficiaries by 2024.
+    \item \textbf{Existing Studies}: Focus on competition \citep{curtoCanHealthInsurance2021,millerOptimalGeographicDistribution2023} and selection \citep{aizawaAdvertisingRiskSelection2018,brownHowDoesRisk2014}.
+  \item \textbf{New Perspective}: This paper focus on how private information and endogenous plan design jointly drive self-selection under risk adjustment in MA markets.
   \end{itemize}
 \end{frame}
 
@@ -120,11 +113,11 @@
 \end{frame}
 
 \begin{frame}{Key Findings}
-  Counterfactual simulation indicate that if the risk adjustment policy can neutralize self-selection effect:
+  If risk adjustment fully neutralizes cream-skimming incentives:
   \begin{itemize}
-    \item Consumer surplus increases by 11\%
-    \item Firm profits increase by 34.6\%
-    \item No significant change in government spending
+    \item Total consumer surplus rises by 11\%
+    \item Total firm profits increase by 34.6\%
+    \item No significant change in total government spending
   \end{itemize}
 \end{frame}
 
@@ -136,7 +129,7 @@
   \end{itemize}
 \end{frame}
 
-\section{Data}
+\section{Data \& Model}
 
 \begin{frame}{Data}
   \begin{itemize}
@@ -155,10 +148,7 @@
   \input{figures/tables/consumer_summary.tex}
 \end{frame}
   
-
-
-\section{Model}
-\begin{frame}{Timing}
+\begin{frame}{Model: Timing}
   \begin{itemize}
     \item \textbf{Government Sets Subsidy Rates:} Determines capitation payments using a risk adjustment formula.
     \item \textbf{Stage 1 - Firm Decisions:} Firms set the prices and generosity levels of their plans to maximize profit after accounting for subsidies.
@@ -273,23 +263,21 @@
 \end{frame}
 
 \begin{frame}{Supply: Plan Design Problem}
-  The total profit for a firm in county $c$ is the aggregate of profits from all its offered plans
-  \begin{equation}
-      \pi_{f,c} = \sum_{j \in \mathcal{J}_{f,c}} \pi_{j}.
-  \end{equation}
 
-  The state-level profit for MA firm $f$ is then the sum of profits across all counties $c$ where firm $f$ operates
-  \begin{equation}
-      \pi_{f} = \sum_{c \in \mathcal{C}_f} \pi_{f,c},
-  \end{equation}
-  where $\mathcal{C}_f$ denotes the set of counties in which firm $f$ is active.
 
-  The firm's plan design problem can be formulated as maximizing state-level profit by strategically setting bid and generosity levels for each plan
+The firm's plan design problem is to maximize \textbf{state-level} profit by strategically setting bid and generosity levels for each plan:
   \begin{equation}
-  \label{eq:objective_function}
-      \max_{b_f, g_f} \pi_{f} = \sum_{c \in \mathcal{C}_f } \sum_{j \in \mathcal{J}_{f,c} } (b_j - mc_j(g_j)) \cdot M_c \cdot s_{c,j}(g, b),
+    \label{eq:objective_function}
+    \max_{b_f, g_f} \pi_{f} = \sum_{c \in \mathcal{C}_f } \sum_{j \in \mathcal{J}_{f,c} } (b_j - mc_j(g_j)) \cdot M_c \cdot s_{c,j}(g, b),
   \end{equation}
-
+  Where:
+    \begin{itemize}\small
+      \item $\mathcal{C}_f$: Set of counties in which firm $f$ operates
+      \item $b_j$: Bid price of plan $j$, determining the premium
+      \item $mc_j(g_j)$: Marginal cost of plan $j$ as a function of generosity level $g_j$
+      \item $M_c$: Number of Medicare beneficiaries in county $c$
+      \item $s_{c,j}$: Market share of plan $j$ in county $c$
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Supply: Necessary Optimality Conditions}
@@ -323,26 +311,17 @@
   \input{figures/tables/demand_result_1.tex}
 \end{frame}
 
-
-
-
-
-\begin{frame}{Plan Costs}
+\begin{frame}{Estimation: Plan Costs}
   \input{figures/tables/cost_result.tex}
 \end{frame}
 
 \section{Counterfactual}
 
-\begin{frame}{``Equal-Profit'' Risk Adjustment}
+\begin{frame}{Equal-Profit Risk Adjustment}
   \begin{itemize}
-    \item \textbf{Objective}: Neutralize self-selection effects.
-    \item \textbf{Method}: 
-    Adjust payment to plans to ensure identical profit across all beneficiaries, regardless of their health status. (i.e. healthy and sick individuals have the same expected profits for the firm)
-    \item \textbf{Outcome}:
-      \begin{itemize}
-        \item Ensures plan costs depend only on generosity, not on enrollees' health status.
-        \item Eliminates cost distortions caused by beneficiaries' self-selection.
-      \end{itemize}
+    \item \textbf{Goal}: Align subsidies so firms earn the same profit from healthy and sick enrollees, removing cream-skimming incentives.
+    \item \textbf{Approach}: Adjust plan subsidy payments so expected profits are uniform across all beneficiaries.
+    \item \textbf{Impact}: Firms no longer have incentives to favor healthier individuals. 
   \end{itemize}
 \end{frame}
 
@@ -353,6 +332,7 @@
     \caption{Welfare Comparison Between Current and Equal-Profit Risk Adjustment}
     \label{tab:counterfactual}
     \begin{threeparttable}
+      \renewcommand{\arraystretch}{1.2}
       \begin{tabular}{@{}rccc@{}}
         \toprule
         \textbf{Metrics} & \textbf{Current} & \textbf{Equal-Profit} & \textbf{\% Change} \\ \midrule
@@ -361,18 +341,25 @@
         Total Producer Surplus & 14.45 & 19.45 & 34.60\% \\
         Gov Spending on TM & 370.26 & 357.46 & -3.46\% \\
         Gov Spending on MA & 163.51 & 176.31 & 7.82\% \\
-        Capitation Adjustment & - & 0.95 & - \\
+        Subsidy Adjustment & - & 0.95 & - \\
         Total Gov Spending & 533.77 & 534.72 & 0.18\% \\
         \bottomrule
       \end{tabular}
       \begin{tablenotes}[para,flushleft]
         \footnotesize
-        \textit{Note}: The monetary values are in billion dollars. The capitation adjustment is the change in the total capitation payment from the government to MA firms, compared to the current policy. The total government spending is the sum of government spending on TM and MA.
+        \textit{Note}: The monetary values are in billion dollars. The subsidy adjustment is the change in the total capitation payment from the government to MA firms, compared to the current policy. The total government spending is the sum of government spending on TM and MA.
       \end{tablenotes}
     \end{threeparttable}
   \end{table}
 \end{frame}
 
+\section{Conclusion}
+\begin{frame}{Conclusion}
+  \begin{itemize}
+    \item \textbf{Takeaway}: Conventional risk adjustment mechanisms are inadequate in completely eliminating cream-skimming incentives, resulting in market distortions and welfare losses.
+    \item \textbf{Future Work}: Further investigate how different consumer and firm segments experience changes in surplus to provide more nuanced policy insights.
+  \end{itemize}
+\end{frame}
 
 \section*{Thank You}
 
@@ -389,6 +376,17 @@
   \begin{center}
     \Huge Appendix
   \end{center}
+\end{frame}
+
+%---- Bibliography ----%
+\newpage
+\begin{frame}[plain, noframenumbering] % Create a new frame without a frame number
+  \frametitle{References} % Add a title to the slide
+
+  {\scriptsize
+  \bibliographystyle{aer} % set the bibliography style as AER
+  \bibliography{bibliography} % set the bibliography file (bibliography.bib)
+  }
 \end{frame}
 
 \begin{frame}{Appendix: Risk Adjustment Generation}
@@ -440,4 +438,36 @@
     \item Beneficiaries choose between TM and MA.
   \end{itemize}
   \end{frame}
+
+
+  \begin{frame}{Estimation: Demand Overview}
+    Two step estimation by \citet{goolsbeeConsumerGainsDirect2004}:
+  
+    \begin{itemize}
+      \item Weighted MLE of the heterogeneity parameters and mean utilities.
+      \item IV estimation of the mean utility parameters.
+    \end{itemize}
+  \end{frame}
+  
+  \begin{frame}{Weighted MLE}
+    Find $\vartheta$ (set of parameters) that maximizes the likelihood of the observed individual choices, while ensuring that the implied market shares match the observed market shares.
+  
+    \begin{equation}
+      \begin{aligned}
+          \max_\vartheta
+                              & \underbrace{\sum_{c} \sum_i w_{ci} \cdot \sum_{j\in \mathcal{J}_c}
+              y_{cij} \cdot \ln(s_{cij} (\vartheta ))}
+          _{\text{Weighted log-likelihood}}                                                        \\
+          \textrm{s.t.} \quad & \underbrace{{s_{cj}^*} =
+              \sum_i w_{ci} \cdot s_{cij} (\vartheta )}_{\text{Market share matching condition}}
+          \quad \forall j = 1, ...J, \quad \forall c,                                              \\
+      \end{aligned}
+  \end{equation}
+  \begin{itemize}\small
+    \item $y_{cij}$ is the indicator of the observed individual choice of plan $j$ in county $c$,
+    \item $s_{cij}^*$ is the observed market share of plan $j$ in county $c$.
+  \end{itemize}
+    
+  \end{frame}
+
 \end{document}

@@ -3,10 +3,19 @@
 \fi
 \begin{thebibliography}{xx}
 
-\harvarditem[Fan]{Fan}{2013}{fanOwnershipConsolidationProduct2013}
-{\bf Fan, Ying}, ``Ownership {{Consolidation}} and {{Product Characteristics}}: {{A Study}} of the {{US Daily Newspaper Market}},'' {\it American Economic Review}, 2013, {\it 103} (5), 1598--1628.
+\harvarditem[Aizawa and Kim]{Aizawa and Kim}{2018}{aizawaAdvertisingRiskSelection2018}
+{\bf Aizawa, Naoki and You~Suk Kim}, ``Advertising and {{Risk Selection}} in {{Health Insurance Markets}},'' {\it The American Economic Review}, 2018, {\it 108} (3), 828--867.
+
+\harvarditem[Brown et al.]{Brown, Duggan, Kuziemko and Woolston}{2014}{brownHowDoesRisk2014}
+{\bf Brown, Jason, Mark Duggan, Ilyana Kuziemko, and William Woolston}, ``How {{Does Risk Selection Respond}} to {{Risk Adjustment}}? {{New Evidence}} from the {{Medicare Advantage Program}},'' {\it American Economic Review}, 2014, {\it 104} (10), 3335--3364.
+
+\harvarditem[Curto et al.]{Curto, Einav, Levin and Bhattacharya}{2021}{curtoCanHealthInsurance2021}
+{\bf Curto, Vilsa, Liran Einav, Jonathan Levin, and Jay Bhattacharya}, ``Can {{Health Insurance Competition Work}}? {{Evidence}} from {{Medicare Advantage}},'' {\it Journal of Political Economy}, 2021.
 
 \harvarditem[Goolsbee and Petrin]{Goolsbee and Petrin}{2004}{goolsbeeConsumerGainsDirect2004}
 {\bf Goolsbee, Austan and Amil Petrin}, ``The {{Consumer Gains}} from {{Direct Broadcast Satellites}} and the {{Competition}} with {{Cable TV}},'' {\it Econometrica}, 2004, {\it 72} (2), 351--381.
+
+\harvarditem[Miller et al.]{Miller, Petrin, Robert and Michael}{2023}{millerOptimalGeographicDistribution2023}
+{\bf Miller, Keaton, Amil Petrin, Town Robert, and Chernew Michael}, ``The {{Optimal Geographic Distribution}} of {{Managed Competition Subsidies}},'' Technical Report 2023.
 
 \end{thebibliography}
