@@ -73,7 +73,3 @@ feedback:
 
 todo:
 
-- add the first page on basic description of the Meidcare, and MA
-- add the literature review on the contribution page
-- demand model: add the estimation part
-- supply model: add the first order condition
