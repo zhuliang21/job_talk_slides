@@ -1,28 +1,136 @@
 \documentclass{beamer}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{threeparttable}
+\usepackage{booktabs}
+\usepackage{multirow}
 \usepackage[width=24,height=36,orientation=landscape,scale=1.0]{beamerposter}
 
 \usetheme{confposter}
 
-
 \title{Risk Adjustment, Self-Selection and Plan Design in Medicare Advantage}
-\author{Your Name}
-\institute{Your Institution}
-\date{\today}
+\author{\huge Zhu Liang}
+\institute{\huge Stony Brook University}
 
+\setbeamercolor{block title}{fg=structure}
 \begin{document}
 \begin{frame}[t]
-\begin{columns}[t,totalwidth=\textwidth]
-  \begin{column}{0.3\textwidth}
-    Column 1 content
-  \end{column}
-  \begin{column}{0.3\textwidth}
-    Column 2 content
-  \end{column}
-  \begin{column}{0.3\textwidth}
-    Column 3 content
-  \end{column}
-\end{columns}
+  \linespread{1.2}\selectfont
+  \begin{columns}[t]
+    % Column 1
+    \begin{column}{.25\textwidth}
+      % Background
+      \begin{block}{Background}
+        \begin{figure}[ht]
+          \centering
+          \scriptsize
+          \resizebox{0.5\linewidth}{!}{%
+          \input{figures/images/medicare_market.tex}
+        }
+          \caption{Medicare Market Illustration}
+        \end{figure}
+        Medicare is a U.S. federal health insurance program mainly for individuals aged 65 and older, comprising two main components:
+        \begin{itemize}
+          \item \textbf{Traditional Medicare (TM)}: A fee-for-service (FFS) system, typically paired with Medigap plans.
+          \item \textbf{Medicare Advantage (MA)}: A managed competition framework where private insurers, subsidized by the government, often offer plans with \textbf{lower premiums and reduced generosity} compared to Traditional Medicare (TM).
+        \end{itemize}
+        \begin{itemize}
+          \item \textbf{Managed Competition}: The government provides fixed and predetermined subsidies to private insurance firms, which in turn offer insurance plans to beneficiaries.
+          \item \textbf{Cream Skimming}: Firms strategically target healthier beneficiaries to maximize profits.
+          \item \textbf{Risk Adjustment}: The government adjusts subsidy payments to insurers based on beneficiaries' observable characteristics.
+        \end{itemize}
+      \end{block}
+
+      % Motivation
+      \begin{block}{Motivation}
+        \begin{itemize}
+          \item \textbf{Self-Selection}: Beneficiaries make enrollment decisions based on their private information.
+          \item Because of self-selection, the beneficiaries sharing the same risk adjusted subsidy payment may have different unobserved health perception, e.g. healthy beneficiaries perfer to enroll in plans with lower premiums and lower generosity, while sick beneficiaries perfer to enroll in plans with higher premiums and higher generosity.
+          \item Current risk adjustment mechanism does not account for the self-selection effects, leading to the ``cream skimming'' incentives for MA firms to target healthier beneficiaries by strategically designing plans with lower premiums and lower generosity.
+          \item Many literature has been devoted to the study of competition and selection in the context of Medicare Advantage, but attention to the self-selection under current risk adjustment mechanism is limited.
+        \end{itemize}
+      \end{block}
+      % Goals
+      \begin{block}{Goals}
+        \begin{itemize}
+          \item \textbf{Theoretical}: Developed a managed competition model incorporating endogenous plan design and self-selection under private information.
+          \item \textbf{Empirical}: Applied the model to Medicare Advantage data, evaluating the welfare implications of self-selection effects.
+          \item \textbf{Policy}: Provided insights for enhancing risk adjustment payment policies to mitigate market distortions.
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{.3\textwidth}
+
+      % Method
+      \begin{block}{Method}
+        \begin{itemize}
+          \item Develop a structural model of demand and supply that incorporates self-selection and endogenous plan design.
+          \item Estimate the model using Medicare Advantage data.
+          \item Conduct counterfactual simulation to analyze scenario where self-selection effects are neutralized.
+        \end{itemize}
+      \end{block}
+
+      % Presentation
+      \begin{block}{Results}
+      \textbf{Demand Estimation Results}
+      \input{figures/tables/demand_result_1.tex}
+      \begin{itemize}
+        \item The private health perception is the most important factor in determining the plan choice over the generosity preference.
+        \item For beneficiaries sharing the same risk adjusted subsidy payment, the private health perception could be very different.
+      \end{itemize}
+      
+    \textbf{Supply Estimation Results}
+      \input{figures/tables/cost_result.tex}
+      \begin{itemize}
+        \item The generosity of the plan is the most important factor in determining the cost of the plan.
+        \item The marginal cost increase non-linearly with the generosity of the plan, suggesting that the self-selection effects.
+        \item Because of the self-selection effects, a high generosity will attract beneficiaries with bad health 
+      \end{itemize}
+      \end{block}
+
+    \end{column}
+    \begin{column}{.25 \textwidth}
+      \begin{block}{Counterfactual Simulation}
+        \textbf{}
+
+        \begin{table}[ht]
+          \small
+          \centering
+          \caption{Welfare Comparison Between Current and Equal-Profit Risk Adjustment}
+          \label{tab:counterfactual}
+          \begin{threeparttable}
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabular}{@{}rccc@{}}
+              \toprule
+              \textbf{Metrics} & \textbf{Current} & \textbf{Equal-Profit} & \textbf{\% Change} \\ \midrule
+              Total MA share (\%) & 30.58 & 33.25 & 8.72\% \\
+              Total Consumer Surplus & 22.08 & 24.51 & 11.01\% \\
+              Total Producer Surplus & 14.45 & 19.45 & 34.60\% \\
+              Gov Spending on TM & 370.26 & 357.46 & -3.46\% \\
+              Gov Spending on MA & 163.51 & 176.31 & 7.82\% \\
+              Subsidy Adjustment & - & 0.95 & - \\
+              Total Gov Spending & 533.77 & 534.72 & 0.18\% \\
+              \bottomrule
+            \end{tabular}
+            \begin{tablenotes}[para,flushleft]
+              \footnotesize
+              \textit{Note}: The monetary values are in billion dollars. The subsidy adjustment is the change in the total capitation payment from the government to MA firms, compared to the current policy. The total government spending is the sum of government spending on TM and MA.
+            \end{tablenotes}
+          \end{threeparttable}
+        \end{table}
+      \end{block}
+      % Takeaways
+      \begin{block}{Takeaways}
+        \begin{itemize}
+          \item Conventional risk adjustment mechanisms do not fully eliminate cream-skimming incentives, leading to market distortions and welfare losses.
+        \end{itemize}
+      \end{block}
+      % References
+      \begin{block}{References}
+      \end{block}
+
+    \end{column}
+  
+  \end{columns}
 \end{frame}
 \end{document}
