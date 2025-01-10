@@ -44,10 +44,11 @@
       % Motivation
       \begin{block}{Motivation}
         \begin{itemize}
-          \item \textbf{Self-Selection}: Beneficiaries make enrollment decisions based on their private information.
-          \item Because of self-selection, the beneficiaries sharing the same risk adjusted subsidy payment may have different unobserved health perception, e.g. healthy beneficiaries perfer to enroll in plans with lower premiums and lower generosity, while sick beneficiaries perfer to enroll in plans with higher premiums and higher generosity.
-          \item Current risk adjustment mechanism does not account for the self-selection effects, leading to the ``cream skimming'' incentives for MA firms to target healthier beneficiaries by strategically designing plans with lower premiums and lower generosity.
-          \item Many literature has been devoted to the study of competition and selection in the context of Medicare Advantage, but attention to the self-selection under current risk adjustment mechanism is limited.
+            \item \textbf{Self-Selection}: Beneficiaries make enrollment decisions based on their private information.
+            \item Due to private infromation, beneficiaries sharing the same risk-adjusted subsidy payment may have different unobserved health perceptions. For example, healthier beneficiaries prefer to enroll in plans with lower premiums and reduced generosity, while less healthy beneficiaries opt for plans with higher premiums and greater generosity.
+            \item The current risk adjustment mechanism implicitly assumes that beneficiaries with identical observable characteristics possess the same unobserved health perceptions, which may not be accurate in practice.
+            \item Consequently, it fails to account for self-selection effects, leading to ``cream-skimming'' incentives for MA firms to target healthier beneficiaries by strategically designing plans with lower premiums and reduced generosity.
+            \item Although much of the literature has focused on competition and selection within Medicare Advantage, attention to self-selection under the current risk adjustment mechanism remains limited.
         \end{itemize}
       \end{block}
       % Goals
@@ -71,15 +72,29 @@
       \end{block}
 
       % Presentation
-      \begin{block}{Results}
-      \textbf{Demand Estimation Results}
+      \begin{block}{Model \& Estimation}
+      \begin{center}
+      \textbf{Demand}
+      \begin{itemize}
+        \item The model incorporates self-selection effects, where beneficiaries with different unobserved health perceptions, which leads to heterogeneous preferences for plan design.
+        \item The health perceptions are assumed to follow a distribution with a mean of the predicted health status by the risk adjustment model with a standard deviation of $\sigma_{\tau}$.
+      \end{itemize}
+      \end{center}
       \input{figures/tables/demand_result_1.tex}
       \begin{itemize}
-        \item The private health perception is the most important factor in determining the plan choice over the generosity preference.
-        \item For beneficiaries sharing the same risk adjusted subsidy payment, the private health perception could be very different.
+        \item The private health perception significantly affect the plan choice of beneficiaries.
+        \item For beneficiaries sharing the same risk adjusted subsidy payment, the private health perception could be very different, which leads to different plan choices. This aligns well with the self-selection effects.
       \end{itemize}
-      
-    \textbf{Supply Estimation Results}
+    
+    \begin{center}
+      \textbf{Supply}
+    \end{center}
+
+    \begin{itemize}
+      \item The model incorporates endogenous plan design, where firms strategically design plans to maximize profits.
+      \item The cost structure of plans allows the self-selection effects.
+    \end{itemize}
+    
       \input{figures/tables/cost_result.tex}
       \begin{itemize}
         \item The generosity of the plan is the most important factor in determining the cost of the plan.
@@ -91,8 +106,16 @@
     \end{column}
     \begin{column}{.25 \textwidth}
       \begin{block}{Counterfactual Simulation}
-        \textbf{}
+        \begin{center}
+          \textbf{Equal-Profit Risk Adjustment}
+        \end{center}
 
+        \begin{itemize}
+          \item \textbf{Goal}: Align subsidies so firms earn the same profit from healthy and sick enrollees, removing cream-skimming incentives.
+          \item \textbf{Approach}: Adjust plan subsidy payments so expected profits are uniform across all beneficiaries.
+          \item \textbf{Impact}: Firms no longer have incentives to favor healthier individuals. 
+        \end{itemize}
+        
         \begin{table}[ht]
           \small
           \centering
@@ -117,17 +140,35 @@
               \textit{Note}: The monetary values are in billion dollars. The subsidy adjustment is the change in the total capitation payment from the government to MA firms, compared to the current policy. The total government spending is the sum of government spending on TM and MA.
             \end{tablenotes}
           \end{threeparttable}
+
         \end{table}
+        \begin{center}
+          \textbf{Welfare Analysis}
+        \end{center}
+        
+        \begin{itemize}
+          \item \textbf{Firm Response}: Firms optimize their plan designs to maximize profits under the new risk adjustment mechanism. Consequently, the updated plan designs are generally more generous and feature higher premiums.
+          \item \textbf{Consumer Surplus}: Total consumer surplus increases by 11.01\% with the new risk adjustment-based plan designs.
+          \item \textbf{Producer Surplus}: Medicare Advantage plans become more attractive, resulting in a 34.60\% increase in total producer surplus under the new risk adjustment mechanism.
+        \end{itemize}     
       \end{block}
       % Takeaways
       \begin{block}{Takeaways}
         \begin{itemize}
           \item Conventional risk adjustment mechanisms do not fully eliminate cream-skimming incentives, leading to market distortions and welfare losses.
+          \item The proposed equal-profit risk adjustment mechanism can further mitigate cream-skimming incentives by accounting for self-selection effects, leading to improved market outcomes and welfare gains.
         \end{itemize}
       \end{block}
       % References
       \begin{block}{References}
+        \begin{enumerate}
+          \item Aizawa, N., \& Kim, Y. S. (2018). Advertising and Risk Selection in Health Insurance Markets. \textit{The American Economic Review, 108}(3), 828-867. \href{https://doi.org/DOI}{https://doi.org/DOI}
+          \item Brown, J., Duggan, M., Kuziemko, I., \& Woolston, W. (2014). How Does Risk Selection Respond to Risk Adjustment? New Evidence from the Medicare Advantage Program. \textit{American Economic Review, 104}(10), 3335-3364. \href{https://doi.org/DOI}{https://doi.org/DOI}
+          \item Curto, V., Einav, L., Levin, J., \& Bhattacharya, J. (2021). Can Health Insurance Competition Work? Evidence from Medicare Advantage. \textit{Journal of Political Economy}. \href{https://doi.org/DOI}{https://doi.org/DOI}
+          \item Miller, K., Petrin, A., Robert, T., \& Michael, C. (2023). The Optimal Geographic Distribution of Managed Competition Subsidies. Technical Report 2023. \href{https://doi.org/DOI}{https://doi.org/DOI}
+      \end{enumerate}
       \end{block}
+
 
     \end{column}
   
