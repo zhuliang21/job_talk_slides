@@ -67,7 +67,7 @@
         \begin{itemize}
           \item Develop a structural model of demand and supply that incorporates self-selection and endogenous plan design.
           \item Estimate the model using Medicare Advantage data.
-          \item Conduct counterfactual simulation to analyze scenario where self-selection effects are neutralized.
+          \item Conduct counterfactual simulations to analyze scenarios where self-selection effects are neutralized.
         \end{itemize}
       \end{block}
 
@@ -76,14 +76,14 @@
       \begin{center}
       \textbf{Demand}
       \begin{itemize}
-        \item The model incorporates self-selection effects, where beneficiaries with different unobserved health perceptions, which leads to heterogeneous preferences for plan design.
-        \item The health perceptions are assumed to follow a distribution with a mean of the predicted health status by the risk adjustment model with a standard deviation of $\sigma_{\tau}$.
+        \item The model incorporates self-selection effects, where beneficiaries have varying unobserved health perceptions, leading to heterogeneous preferences for plan design.
+        \item Health perceptions are assumed to follow a distribution with a mean equal to the predicted health status from the risk adjustment model and a standard deviation of $\sigma_{\tau}$.
       \end{itemize}
       \end{center}
       \input{figures/tables/demand_result_1.tex}
       \begin{itemize}
-        \item The private health perception significantly affect the plan choice of beneficiaries.
-        \item For beneficiaries sharing the same risk adjusted subsidy payment, the private health perception could be very different, which leads to different plan choices. This aligns well with the self-selection effects.
+        \item Private health perceptions significantly influence beneficiaries' plan choices.
+        \item Among beneficiaries with identical risk-adjusted subsidy payments, private health perceptions can vary widely, resulting in different plan selections. This aligns with the self-selection effects.
       \end{itemize}
     
     \begin{center}
@@ -97,9 +97,13 @@
     
       \input{figures/tables/cost_result.tex}
       \begin{itemize}
-        \item The generosity of the plan is the most important factor in determining the cost of the plan.
-        \item The marginal cost increase non-linearly with the generosity of the plan, suggesting that the self-selection effects.
-        \item Because of the self-selection effects, a high generosity will attract beneficiaries with bad health 
+        \item Plan generosity is the most significant factor influencing its cost.
+        \item Marginal costs increase non-linearly with plan generosity, indicating self-selection effects.
+        \item Generosity impacts the marginal cost of a plan in two ways:
+          \begin{itemize}
+            \item \textbf{Direct Effect}: Generosity directly raises plan costs by providing more comprehensive coverage.
+            \item \textbf{Indirect Effect}: Generosity indirectly increases plan costs by attracting sicker beneficiaries.
+          \end{itemize}
       \end{itemize}
       \end{block}
 
