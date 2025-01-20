@@ -1,0 +1,158 @@
+\documentclass{beamer}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{threeparttable}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[size=custom,
+            width=60.96,  % <-- 对应 24 英寸
+            height=91.44,   % <-- 对应 36 英寸
+            scale=1.0,
+            orientation=portrait
+            ]{beamerposter}
+
+\usetheme{confposter}
+
+\title{Risk Adjustment, Self-Selection and Plan Design in Medicare Advantage}
+\author{ Zhu Liang}
+\institute{ Stony Brook University}
+
+\setbeamercolor{block title}{fg=structure}
+\begin{document}
+\begin{frame}[t]
+  \linespread{1.2}\selectfont
+  \begin{columns}[t]
+    % Column 1
+    \begin{column}{.45\textwidth}
+      % Background
+      \begin{block}{Background}
+        \begin{figure}[ht]
+          \centering
+          \scriptsize
+          \resizebox{0.5\linewidth}{!}{%
+          \input{figures/images/medicare_market.tex}
+        }
+          \caption{Medicare Market Illustration}
+        \end{figure}
+        Medicare is a U.S. federal health insurance program mainly for individuals aged 65 and older, comprising two main components:
+        \begin{itemize}
+          \item \textbf{Traditional Medicare (TM)}: A fee-for-service (FFS) system, typically paired with Medigap plans.
+          \item \textbf{Medicare Advantage (MA)}: A managed competition framework where private insurers, subsidized by the government, often offer plans with \textbf{lower premiums and reduced generosity} compared to Traditional Medicare (TM).
+        \end{itemize}
+        \begin{itemize}
+          \item \textbf{Managed Competition}: The government provides fixed and predetermined subsidies to private insurance firms, which in turn offer insurance plans to beneficiaries.
+          \item \textbf{Cream Skimming}: Firms strategically target healthier beneficiaries to maximize profits.
+          \item \textbf{Risk Adjustment}: The government adjusts subsidy payments to insurers based on beneficiaries' observable characteristics.
+        \end{itemize}
+      \end{block}
+
+      % Motivation
+      \begin{block}{Motivation}
+        \begin{itemize}
+            \item \textbf{Self-Selection}: Beneficiaries make enrollment decisions based on private information. Healthier individuals may choose plans with lower premiums and reduced generosity, while less healthy ones opt for plans with higher premiums and greater generosity.
+            \item The current risk adjustment mechanism assumes identical unobserved health perceptions for beneficiaries with the same observable characteristics, which may be inaccurate.
+            \item This leads to ``cream-skimming'' incentives, allowing MA firms to target healthier beneficiaries by designing plans with lower premiums and reduced generosity.
+            \item It provides a new perspective on the welfare implications of self-selection effects in the Medicare Advantage market.
+        \end{itemize}
+      \end{block}
+      % Goals
+      \begin{block}{Goals}
+        \begin{itemize}
+          \item \textbf{Theoretical}: Developed a managed competition model incorporating endogenous plan design and self-selection under private information.
+          \item \textbf{Empirical}: Applied the model to Medicare Advantage data, evaluating the welfare implications of self-selection effects.
+          \item \textbf{Policy}: Provided insights for enhancing risk adjustment payment policies to mitigate market distortions.
+        \end{itemize}
+      \end{block}
+       % Method
+      \begin{block}{Method}
+        \begin{itemize}
+          \item Develop a structural model of demand and supply that incorporates self-selection and endogenous plan design.
+          \item Estimate the model using Medicare Advantage data.
+          \item Conduct counterfactual simulations to analyze scenarios where self-selection effects are neutralized.
+        \end{itemize}
+      \end{block}
+    \end{column}
+
+
+    \begin{column}{.45\textwidth}
+
+            % Presentation
+            \begin{block}{Model \& Estimation}
+              \begin{center}
+              \textbf{Demand}
+              \end{center}
+              \begin{itemize}
+                \item The model incorporates self-selection effects, where beneficiaries have varying unobserved health perceptions, leading to heterogeneous preferences for plan design.
+                \item Individual health perceptions are assumed to follow a distribution with a mean equal to the predicted health status from the risk adjustment model with a variance.
+                \item Estimation results indicate that beneficiaries with identical risk-adjusted subsidies have varying private health perceptions, leading to different plan selections, consistent with self-selection effects.     
+              \end{itemize}
+            
+            \begin{center}
+              \textbf{Supply}
+            \end{center}
+        
+            \begin{itemize}
+              \item The model incorporates endogenous plan design, where firms strategically design plans to maximize profits.
+              \item The cost structure of plans allows the self-selection effects.
+              \item Estimation results show that plan generosity is the most significant factor influencing its cost. Marginal costs increase non-linearly with plan generosity, indicating self-selection effects.
+            \end{itemize}
+              \end{block}
+
+      \begin{block}{Counterfactual Simulation}
+        \begin{center}
+          \textbf{Equal-Profit Risk Adjustment}
+        \end{center}
+
+        \begin{itemize}
+          \item \textbf{Goal}: Align subsidies so firms earn the same profit from healthy and sick enrollees, removing cream-skimming incentives so that firms are indifferent to the health status of beneficiaries.
+        \end{itemize}
+        
+        \begin{table}[ht]
+          \small
+          \centering
+          \caption{Welfare Comparison Between Current and Equal-Profit Risk Adjustment}
+          \label{tab:counterfactual}
+          \begin{threeparttable}
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabular}{@{}rccc@{}}
+              \toprule
+              \textbf{Metrics} & \textbf{Current} & \textbf{Equal-Profit} & \textbf{\% Change} \\ \midrule
+              Total MA share (\%) & 30.58 & 33.25 & 8.72\% \\
+              Total Consumer Surplus & 22.08 & 24.51 & 11.01\% \\
+              Total Producer Surplus & 14.45 & 19.45 & 34.60\% \\
+              Gov Spending on TM & 370.26 & 357.46 & -3.46\% \\
+              Gov Spending on MA & 163.51 & 176.31 & 7.82\% \\
+              Subsidy Adjustment & - & 0.95 & - \\
+              Total Gov Spending & 533.77 & 534.72 & 0.18\% \\
+              \bottomrule
+            \end{tabular}
+          \end{threeparttable}
+
+        \end{table}
+        \begin{center}
+          \textbf{Welfare Analysis}
+        \end{center}
+        
+        \begin{itemize}
+          \item \textbf{Market Responses}: Firms redesign plans to be more generous with higher premiums under equal-profit risk adjustment.
+          Both consumer and producer surpluses increase, indicating improved market outcomes, while total government spending remains stable.    
+        \end{itemize}     
+      \end{block}
+      % Takeaways
+      \begin{block}{Takeaways}
+        \begin{itemize}
+          \item Improved risk adjustment mechanism can further mitigate cream-skimming incentives by accounting for self-selection effects, leading to improved market outcomes and welfare gains.
+        \end{itemize}
+      \end{block}
+      % References
+      \begin{block}{References}
+        \begin{enumerate}
+          \item Curto, V., Einav, L., Levin, J., \& Bhattacharya, J. (2021). Can Health Insurance Competition Work? Evidence from Medicare Advantage. \textit{Journal of Political Economy}. \href{https://doi.org/DOI}{https://doi.org/DOI}
+          \item Miller, K., Petrin, A., Robert, T., \& Michael, C. (2023). The Optimal Geographic Distribution of Managed Competition Subsidies. Technical Report 2023. \href{https://doi.org/DOI}{https://doi.org/DOI}
+      \end{enumerate}
+      \end{block}
+    \end{column}
+  
+  \end{columns}
+\end{frame}
+\end{document}
